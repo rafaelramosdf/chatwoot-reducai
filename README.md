@@ -90,6 +90,21 @@ Publish help articles, FAQs, and guides through the built-in Help Center Portal.
 
 Detailed documentation is available at [chatwoot.com/help-center](https://www.chatwoot.com/help-center).
 
+## Development
+
+For local development setup instructions, please see [DEVELOPMENT.md](./DEVELOPMENT.md).
+
+### Quick Start for Developers
+
+1. **Prerequisites**: Docker Desktop, Git
+2. **Clone**: `git clone https://github.com/rafaelramosdf/chatwoot-reducai.git`
+3. **Configure**: Copy `.env.example` to `.env` and set required variables
+4. **Build**: `docker compose build base`
+5. **Start**: `docker compose up -d`
+6. **Access**: http://localhost:3000
+
+For detailed setup instructions, troubleshooting, and development workflows, see the complete [Development Guide](./DEVELOPMENT.md).
+
 ## Translation process
 
 The translation process for Chatwoot web and mobile app is managed at [https://translate.chatwoot.com](https://translate.chatwoot.com) using Crowdin. Please read the [translation guide](https://www.chatwoot.com/docs/contributing/translating-chatwoot-to-your-language) for contributing to Chatwoot.

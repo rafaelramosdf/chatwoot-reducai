@@ -159,6 +159,8 @@ class Account < ApplicationRecord
     ISO_639.find(account_locale)&.english_name&.downcase || 'english'
   end
 
+
+
   private
 
   def notify_creation

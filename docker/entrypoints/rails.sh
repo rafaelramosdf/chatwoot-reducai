@@ -8,9 +8,14 @@ rm -rf /app/tmp/cache/*
 
 echo "Waiting for postgres to become ready...."
 
+# Set default environment variables
+export POSTGRES_HOST=${POSTGRES_HOST:-postgres}
+export POSTGRES_PORT=${POSTGRES_PORT:-5432}
+export POSTGRES_USERNAME=${POSTGRES_USERNAME:-postgres}
+
 # Let DATABASE_URL env take presedence over individual connection params.
 # This is done to avoid printing the DATABASE_URL in the logs
-$(docker/entrypoints/helpers/pg_database_url.rb)
+eval $(ruby docker/entrypoints/helpers/pg_database_url.rb)
 PG_READY="pg_isready -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USERNAME"
 
 until $PG_READY
